@@ -378,7 +378,7 @@ async def get_dashboard():
     total_reproductores = await db.animals.count_documents({"tipo": "reproductor", "estado": "activo"})
     
     # Obtener recolección de huevos
-    today = date.today()
+    today = date_to_datetime(date.today())
     huevos_hoy = await db.egg_collections.aggregate([
         {"$match": {"fecha": today}},
         {"$group": {"_id": None, "total": {"$sum": "$cantidad"}}}
@@ -386,8 +386,8 @@ async def get_dashboard():
     
     # Obtener huevos del mes
     from calendar import monthrange
-    start_month = today.replace(day=1)
-    end_month = today.replace(day=monthrange(today.year, today.month)[1])
+    start_month = date_to_datetime(date.today().replace(day=1))
+    end_month = date_to_datetime(date.today().replace(day=monthrange(date.today().year, date.today().month)[1]))
     
     huevos_mes = await db.egg_collections.aggregate([
         {"$match": {"fecha": {"$gte": start_month, "$lte": end_month}}},
