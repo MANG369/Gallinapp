@@ -336,6 +336,8 @@ async def get_feed_calculations():
 @api_router.post("/transactions", response_model=Transaction)
 async def create_transaction(transaction: TransactionCreate):
     transaction_dict = transaction.dict()
+    # Convert date to datetime for MongoDB compatibility
+    transaction_dict["fecha"] = date_to_datetime(transaction_dict["fecha"])
     transaction_obj = Transaction(**transaction_dict)
     await db.transactions.insert_one(transaction_obj.dict())
     return transaction_obj
