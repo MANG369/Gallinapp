@@ -137,15 +137,18 @@ backend:
 
   - task: "Feed calculator with automatic calculations"
     implemented: true
-    working: false
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: false
         agent: "main"
         comment: "Implemented feed calculator with age-based consumption formulas for different animal types"
+      - working: true
+        agent: "testing"
+        comment: "Feed calculator is working correctly with proper age-based formulas. Verified calculations for ponedoras (80g/day) and engorde (100g/day) based on their age."
 
   - task: "Incubation management system"
     implemented: true
