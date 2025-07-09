@@ -903,9 +903,10 @@ function FeedCalculator() {
         <h2 className="text-3xl font-bold text-gray-800">Calculadora de Alimento</h2>
         <button
           onClick={() => setShowForm(true)}
-          className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+          className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center space-x-2"
         >
-          + Nuevo Cálculo
+          <span className="text-lg">🧮</span>
+          <span>Nuevo Cálculo</span>
         </button>
       </div>
 
