@@ -64,7 +64,7 @@ class Animal(BaseModel):
     tipo: AnimalType
     raza: str
     cantidad: int
-    fecha_ingreso: date
+    fecha_ingreso: datetime
     edad_dias: int
     peso_promedio: float
     estado: AnimalStatus = AnimalStatus.ACTIVO
