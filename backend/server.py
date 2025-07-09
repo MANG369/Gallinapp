@@ -19,6 +19,12 @@ mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
+# Helper function to convert date to datetime for MongoDB compatibility
+def date_to_datetime(d):
+    if isinstance(d, date) and not isinstance(d, datetime):
+        return datetime.combine(d, time())
+    return d
+
 # Create the main app without a prefix
 app = FastAPI(title="Gallinapp API", description="Sistema de gestión avícola integral")
 
