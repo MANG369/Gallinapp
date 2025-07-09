@@ -245,6 +245,9 @@ async def delete_animal(animal_id: str):
 @api_router.post("/incubation", response_model=IncubationBatch)
 async def create_incubation(incubation: IncubationCreate):
     incubation_dict = incubation.dict()
+    # Convert dates to datetime for MongoDB compatibility
+    incubation_dict["fecha_incubacion"] = date_to_datetime(incubation_dict["fecha_incubacion"])
+    incubation_dict["fecha_eclosion_esperada"] = date_to_datetime(incubation_dict["fecha_eclosion_esperada"])
     incubation_obj = IncubationBatch(**incubation_dict)
     await db.incubation_batches.insert_one(incubation_obj.dict())
     return incubation_obj
