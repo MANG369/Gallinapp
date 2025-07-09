@@ -191,19 +191,19 @@ function Dashboard({ data, loading }) {
           color="bg-blue-500"
         />
         <StatCard
-          icon="🥚"
+          icon="🧺"
           title="Huevos Hoy"
           value={data.huevos_hoy}
           color="bg-yellow-500"
         />
         <StatCard
-          icon="📊"
+          icon="📈"
           title="Huevos Mes"
           value={data.huevos_mes}
           color="bg-orange-500"
         />
         <StatCard
-          icon="💰"
+          icon="💵"
           title="Balance Mes"
           value={`$${data.balance_mes.toLocaleString()}`}
           color="bg-green-500"
@@ -235,12 +235,18 @@ function Dashboard({ data, loading }) {
       {/* Información adicional */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-xl font-semibold mb-4">Incubaciones Activas</h3>
+          <h3 className="text-xl font-semibold mb-4 flex items-center">
+            <span className="text-2xl mr-2">🥚</span>
+            Incubaciones Activas
+          </h3>
           <div className="text-3xl font-bold text-green-600">{data.incubaciones_activas}</div>
         </div>
         
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-xl font-semibold mb-4">Últimas Recolecciones</h3>
+          <h3 className="text-xl font-semibold mb-4 flex items-center">
+            <span className="text-2xl mr-2">🧺</span>
+            Últimas Recolecciones
+          </h3>
           <div className="space-y-2">
             {data.ultimas_recolecciones.slice(0, 3).map((collection, index) => (
               <div key={index} className="flex justify-between items-center">
