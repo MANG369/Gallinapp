@@ -94,8 +94,8 @@ class IncubationBatch(BaseModel):
     tipo_huevo: AnimalType  # ponedora o engorde
     raza: str
     cantidad_huevos: int
-    fecha_incubacion: date
-    fecha_eclosion_esperada: date
+    fecha_incubacion: datetime
+    fecha_eclosion_esperada: datetime
     temperatura: float = 37.5
     humedad: float = 60.0
     estado: IncubationStatus = IncubationStatus.ACTIVO
