@@ -442,6 +442,35 @@ async def get_dashboard():
 async def health_check():
     return {"status": "healthy", "app": "Gallinapp", "version": "1.0"}
 
+# Admin endpoints - Clean database
+@api_router.delete("/admin/clean-database")
+async def clean_database():
+    """Clean all data from the database - USE WITH CAUTION"""
+    try:
+        # Delete all records from all collections
+        await db.animals.delete_many({})
+        await db.incubation_batches.delete_many({})
+        await db.egg_collections.delete_many({})
+        await db.feed_calculations.delete_many({})
+        await db.transactions.delete_many({})
+        
+        # Get counts to verify cleanup
+        counts = {
+            "animals": await db.animals.count_documents({}),
+            "incubation_batches": await db.incubation_batches.count_documents({}),
+            "egg_collections": await db.egg_collections.count_documents({}),
+            "feed_calculations": await db.feed_calculations.count_documents({}),
+            "transactions": await db.transactions.count_documents({})
+        }
+        
+        return {
+            "message": "Database cleaned successfully",
+            "remaining_counts": counts,
+            "total_remaining": sum(counts.values())
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error cleaning database: {str(e)}")
+
 # Include the router in the main app
 app.include_router(api_router)
 
