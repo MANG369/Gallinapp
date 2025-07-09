@@ -1127,9 +1127,10 @@ function Transactions() {
         <h2 className="text-3xl font-bold text-gray-800">Ingresos y Egresos</h2>
         <button
           onClick={() => setShowForm(true)}
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2"
         >
-          + Nueva Transacción
+          <span className="text-lg">➕</span>
+          <span>Nueva Transacción</span>
         </button>
       </div>
 
