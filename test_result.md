@@ -167,15 +167,18 @@ backend:
 
   - task: "Financial management (income/expenses)"
     implemented: true
-    working: false
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: false
         agent: "main"
         comment: "Implemented comprehensive transaction system with balance calculations"
+      - working: true
+        agent: "testing"
+        comment: "Financial management system is working correctly. Successfully created income and expense transactions and verified balance calculations."
 
 frontend:
   - task: "React dashboard with navigation"
