@@ -274,6 +274,8 @@ async def update_incubation(batch_id: str, incubation_update: IncubationUpdate):
 @api_router.post("/egg-collection", response_model=EggCollection)
 async def create_egg_collection(egg_collection: EggCollectionCreate):
     collection_dict = egg_collection.dict()
+    # Convert date to datetime for MongoDB compatibility
+    collection_dict["fecha"] = date_to_datetime(collection_dict["fecha"])
     collection_obj = EggCollection(**collection_dict)
     await db.egg_collections.insert_one(collection_obj.dict())
     return collection_obj
