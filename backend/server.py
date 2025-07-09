@@ -124,7 +124,7 @@ class IncubationUpdate(BaseModel):
 
 class EggCollection(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-    fecha: date
+    fecha: datetime
     lote_origen: str
     tipo: EggType
     cantidad: int
