@@ -320,7 +320,7 @@ async def calculate_feed(feed_data: FeedCalculationCreate):
         "consumo_diario_kg": consumo_diario,
         "consumo_mensual_kg": consumo_mensual,
         "costo_estimado": costo_estimado,
-        "fecha_calculo": date.today()
+        "fecha_calculo": date_to_datetime(date.today())
     })
     
     calculation_obj = FeedCalculation(**calculation_dict)
