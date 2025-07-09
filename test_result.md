@@ -285,3 +285,5 @@ test_plan:
 agent_communication:
   - agent: "main"
     message: "Implemented complete Gallinapp for GRANJAS NG with all required modules: animals inventory, incubation system, egg collection, feed calculator, and financial management. All backend APIs and frontend components are ready for testing."
+  - agent: "testing"
+    message: "Fixed MongoDB date handling issue by converting all date objects to datetime objects in Pydantic models. All backend APIs are now working correctly. Created comprehensive backend_test.py that tests all endpoints and verifies functionality. All backend tests are now passing. Frontend testing is still needed."
