@@ -331,9 +331,10 @@ function Animals() {
         <h2 className="text-3xl font-bold text-gray-800">Inventario de Animales</h2>
         <button
           onClick={() => setShowForm(true)}
-          className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+          className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center space-x-2"
         >
-          + Agregar Lote
+          <span className="text-lg">➕</span>
+          <span>Agregar Lote</span>
         </button>
       </div>
 
