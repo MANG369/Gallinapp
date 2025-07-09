@@ -165,7 +165,7 @@ class FeedCalculationCreate(BaseModel):
 
 class Transaction(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-    fecha: date
+    fecha: datetime
     tipo: TransactionType
     concepto: str
     categoria: str
