@@ -273,11 +273,11 @@ metadata:
 
 test_plan:
   current_focus:
-    - "FastAPI server with animals management"
-    - "MongoDB models for poultry farm management"
-    - "Feed calculator with automatic calculations"
-    - "Incubation management system"
-    - "Financial management (income/expenses)"
+    - "React dashboard with navigation"
+    - "Animals inventory management UI"
+    - "Incubation management UI"
+    - "Egg collection tracking UI"
+    - "Feed calculator UI"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
