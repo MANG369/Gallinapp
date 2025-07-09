@@ -203,6 +203,8 @@ class Dashboard(BaseModel):
 @api_router.post("/animals", response_model=Animal)
 async def create_animal(animal: AnimalCreate):
     animal_dict = animal.dict()
+    # Convert date to datetime for MongoDB compatibility
+    animal_dict["fecha_ingreso"] = date_to_datetime(animal_dict["fecha_ingreso"])
     animal_obj = Animal(**animal_dict)
     await db.animals.insert_one(animal_obj.dict())
     return animal_obj
