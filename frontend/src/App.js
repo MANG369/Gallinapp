@@ -527,9 +527,10 @@ function Incubation() {
         <h2 className="text-3xl font-bold text-gray-800">Gestión de Incubación</h2>
         <button
           onClick={() => setShowForm(true)}
-          className="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition-colors"
+          className="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition-colors flex items-center space-x-2"
         >
-          + Nuevo Lote Incubación
+          <span className="text-lg">➕</span>
+          <span>Nuevo Lote Incubación</span>
         </button>
       </div>
 
