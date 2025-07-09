@@ -287,7 +287,7 @@ async def get_egg_collections():
 
 @api_router.get("/egg-collection/today", response_model=List[EggCollection])
 async def get_today_egg_collections():
-    today = date.today()
+    today = date_to_datetime(date.today())
     collections = await db.egg_collections.find({"fecha": today}).to_list(1000)
     return [EggCollection(**collection) for collection in collections]
 
