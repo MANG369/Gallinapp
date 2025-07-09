@@ -107,15 +107,18 @@ user_problem_statement: "Crear una app para administrar una granja de gallinas p
 backend:
   - task: "FastAPI server with animals management"
     implemented: true
-    working: false
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: false
         agent: "main"
         comment: "Implemented complete FastAPI backend with animals, incubation, egg collection, feed calculator, transactions, and dashboard endpoints"
+      - working: true
+        agent: "testing"
+        comment: "Fixed MongoDB date handling issue by converting all date objects to datetime objects. All animal management endpoints are now working correctly."
   
   - task: "MongoDB models for poultry farm management"
     implemented: true
