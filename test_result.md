@@ -152,15 +152,18 @@ backend:
 
   - task: "Incubation management system"
     implemented: true
-    working: false
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: false
         agent: "main"
         comment: "Created incubation batch management with temperature, humidity, and hatching tracking"
+      - working: true
+        agent: "testing"
+        comment: "Incubation system is working correctly. Successfully created and updated incubation batches with temperature, humidity, and hatched chick tracking."
 
   - task: "Financial management (income/expenses)"
     implemented: true
