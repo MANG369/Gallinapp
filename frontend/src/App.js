@@ -72,73 +72,79 @@ function App() {
               <li>
                 <button
                   onClick={() => setCurrentView('dashboard')}
-                  className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                  className={`w-full text-left px-4 py-2 rounded-lg transition-colors flex items-center space-x-3 ${
                     currentView === 'dashboard' 
                       ? 'bg-green-100 text-green-700 font-semibold' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                 >
-                  📊 Dashboard
+                  <span className="text-xl">📊</span>
+                  <span>Dashboard</span>
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => setCurrentView('animals')}
-                  className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                  className={`w-full text-left px-4 py-2 rounded-lg transition-colors flex items-center space-x-3 ${
                     currentView === 'animals' 
                       ? 'bg-green-100 text-green-700 font-semibold' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                 >
-                  🐓 Inventario Animales
+                  <span className="text-xl">🐓</span>
+                  <span>Inventario Animales</span>
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => setCurrentView('incubation')}
-                  className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                  className={`w-full text-left px-4 py-2 rounded-lg transition-colors flex items-center space-x-3 ${
                     currentView === 'incubation' 
                       ? 'bg-green-100 text-green-700 font-semibold' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                 >
-                  🥚 Incubación
+                  <span className="text-xl">🥚</span>
+                  <span>Incubación</span>
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => setCurrentView('eggs')}
-                  className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                  className={`w-full text-left px-4 py-2 rounded-lg transition-colors flex items-center space-x-3 ${
                     currentView === 'eggs' 
                       ? 'bg-green-100 text-green-700 font-semibold' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                 >
-                  🥚 Recolección Huevos
+                  <span className="text-xl">🧺</span>
+                  <span>Recolección Huevos</span>
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => setCurrentView('feed')}
-                  className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                  className={`w-full text-left px-4 py-2 rounded-lg transition-colors flex items-center space-x-3 ${
                     currentView === 'feed' 
                       ? 'bg-green-100 text-green-700 font-semibold' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                 >
-                  🌾 Calculadora Alimento
+                  <span className="text-xl">🌾</span>
+                  <span>Calculadora Alimento</span>
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => setCurrentView('transactions')}
-                  className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                  className={`w-full text-left px-4 py-2 rounded-lg transition-colors flex items-center space-x-3 ${
                     currentView === 'transactions' 
                       ? 'bg-green-100 text-green-700 font-semibold' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                 >
-                  💰 Ingresos/Egresos
+                  <span className="text-xl">💰</span>
+                  <span>Ingresos/Egresos</span>
                 </button>
               </li>
             </ul>
