@@ -150,7 +150,7 @@ class FeedCalculation(BaseModel):
     consumo_diario_kg: float
     consumo_mensual_kg: float
     costo_estimado: float
-    fecha_calculo: date
+    fecha_calculo: datetime
     observaciones: Optional[str] = None
     created_at: datetime = Field(default_factory=datetime.utcnow)
 
