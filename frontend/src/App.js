@@ -1138,15 +1138,24 @@ function Transactions() {
       {balance && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-green-100 p-4 rounded-lg">
-            <h3 className="text-lg font-semibold text-green-800">Total Ingresos</h3>
+            <h3 className="text-lg font-semibold text-green-800 flex items-center">
+              <span className="text-xl mr-2">📈</span>
+              Total Ingresos
+            </h3>
             <p className="text-2xl font-bold text-green-600">${balance.total_ingresos.toLocaleString()}</p>
           </div>
           <div className="bg-red-100 p-4 rounded-lg">
-            <h3 className="text-lg font-semibold text-red-800">Total Egresos</h3>
+            <h3 className="text-lg font-semibold text-red-800 flex items-center">
+              <span className="text-xl mr-2">📉</span>
+              Total Egresos
+            </h3>
             <p className="text-2xl font-bold text-red-600">${balance.total_egresos.toLocaleString()}</p>
           </div>
           <div className="bg-blue-100 p-4 rounded-lg">
-            <h3 className="text-lg font-semibold text-blue-800">Balance</h3>
+            <h3 className="text-lg font-semibold text-blue-800 flex items-center">
+              <span className="text-xl mr-2">💵</span>
+              Balance
+            </h3>
             <p className={`text-2xl font-bold ${balance.balance >= 0 ? 'text-green-600' : 'text-red-600'}`}>
               ${balance.balance.toLocaleString()}
             </p>
