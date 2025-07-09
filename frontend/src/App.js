@@ -53,7 +53,7 @@ function App() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="bg-white rounded-full p-2">
-                <div className="text-green-600 font-bold text-xl">🐔</div>
+                <div className="text-green-600 font-bold text-xl">🏡</div>
               </div>
               <div>
                 <h1 className="text-2xl font-bold">Gallinapp</h1>
